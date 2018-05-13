@@ -24,7 +24,7 @@ import co.omisego.omisego.model.transaction.consumption.TransactionConsumption
 import co.omisego.omisego.model.transaction.list.Transaction
 import co.omisego.omisego.model.transaction.request.TransactionRequest
 import co.omisego.omisego.network.ewallet.EWalletClient
-import co.omisego.omisego.testUtils.GsonProvider
+import co.omisego.omisego.utils.GsonProvider
 import co.omisego.omisego.utils.OMGEncryptionHelper
 import com.google.gson.JsonElement
 import com.google.gson.reflect.TypeToken
@@ -54,7 +54,7 @@ class OMGAPIClientTest {
     private val retrieveTransactionRequestFile: File by ResourceFile("me.create_transaction_request-post.json")
     private val getSettingFile: File by ResourceFile("me.get_settings-post.json")
     private val errorFile: File by ResourceFile("fail.client-invalid_auth_scheme.json")
-    private val gson by lazy { GsonProvider.provide() }
+    private val gson by lazy { GsonProvider.create() }
     private lateinit var eWalletClient: EWalletClient
     private lateinit var mockWebServer: MockWebServer
     private lateinit var mockUrl: HttpUrl
