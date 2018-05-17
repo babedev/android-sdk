@@ -30,10 +30,15 @@ import org.amshove.kluent.withMessage
 import org.json.JSONObject
 import org.junit.After
 import org.junit.Before
+import org.junit.runner.RunWith
+import org.robolectric.RobolectricTestRunner
+import org.robolectric.annotation.Config
 import java.io.File
 import java.util.concurrent.Executor
 import kotlin.test.Test
 
+@RunWith(RobolectricTestRunner::class)
+@Config(sdk = [23])
 class EWalletClientTest {
     private val secretFileName: String = "secret.json" // Replace your secret file here
     private val secret: JSONObject by lazy { loadSecretFile(secretFileName) }
@@ -47,14 +52,10 @@ class EWalletClientTest {
 
     @Before
     fun setUp() {
-        val auth = OMGEncryptionHelper.encryptBase64(
-            secret.getString("api_key"),
-            secret.getString("auth_token")
-        )
-
         eWalletClient = EWalletClient.Builder {
             debugUrl = mockUrl
-            authenticationToken = auth
+            apiKey = secret.getString("api_key")
+            authenticationToken = secret.getString("auth_token")
             callbackExecutor = Executor { it.run() }
             debug = false
         }.build()
@@ -97,13 +98,14 @@ class EWalletClientTest {
         val errorFun = {
             EWalletClient.Builder {
                 authenticationToken = secret.getString("auth_token")
+                apiKey = secret.getString("api_key")
                 callbackExecutor = Executor { it.run() }
                 debug = false
             }.build()
         }
 
-        errorFun shouldThrow Exceptions.emptyBaseURL::class withMessage
-                Exceptions.emptyBaseURL.message!!
+        errorFun shouldThrow IllegalStateException::class withMessage
+                Exceptions.MSG_EMPTY_BASE_URL
     }
 
     @Test
@@ -111,12 +113,13 @@ class EWalletClientTest {
         val errorFun = {
             EWalletClient.Builder {
                 debugUrl = mockUrl
+                apiKey = secret.getString("api_key")
                 callbackExecutor = Executor { it.run() }
                 debug = false
             }.build()
         }
-        errorFun shouldThrow Exceptions.emptyAuthenticationToken::class withMessage
-                Exceptions.emptyAuthenticationToken.message!!
+        errorFun shouldThrow IllegalStateException::class withMessage
+                Exceptions.MSG_EMPTY_AUTH_TOKEN
     }
 
     @Test

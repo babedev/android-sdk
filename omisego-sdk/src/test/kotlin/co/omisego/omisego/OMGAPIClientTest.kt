@@ -25,7 +25,6 @@ import co.omisego.omisego.model.transaction.list.Transaction
 import co.omisego.omisego.model.transaction.request.TransactionRequest
 import co.omisego.omisego.network.ewallet.EWalletClient
 import co.omisego.omisego.utils.GsonProvider
-import co.omisego.omisego.utils.OMGEncryptionHelper
 import com.google.gson.JsonElement
 import com.google.gson.reflect.TypeToken
 import com.nhaarman.mockito_kotlin.times
@@ -39,10 +38,15 @@ import org.amshove.kluent.withMessage
 import org.json.JSONObject
 import org.junit.Before
 import org.junit.Test
+import org.junit.runner.RunWith
+import org.robolectric.RobolectricTestRunner
+import org.robolectric.annotation.Config
 import retrofit2.Response
 import java.io.File
 import java.util.concurrent.Executor
 
+@RunWith(RobolectricTestRunner::class)
+@Config(sdk = [23])
 class OMGAPIClientTest {
     private val secretFileName: String = "secret.json" // Replace your secret file here
     private val secret: JSONObject by lazy { loadSecretFile(secretFileName) }
@@ -62,16 +66,11 @@ class OMGAPIClientTest {
 
     @Before
     fun setup() {
-        val auth = OMGEncryptionHelper.encryptBase64(
-            secret.getString("api_key"),
-            secret.getString("auth_token")
-        )
-
         initMockWebServer()
-
         eWalletClient = EWalletClient.Builder {
             debugUrl = mockUrl
-            authenticationToken = auth
+            apiKey = secret.getString("api_key")
+            authenticationToken = secret.getString("auth_token")
             callbackExecutor = Executor { it.run() }
             debug = false
         }.build()
