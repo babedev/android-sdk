@@ -31,12 +31,12 @@
       "socket_topic": "transaction_request:4fb2ab5d-0ca6-4639-8a77-10abb091b71c",
       "require_confirmation": false,
       "object": "transaction_request",
-      "minted_token_id": "OMG:a9ef7096-4060-4155-b79d-b36c42d5d095",
-      "minted_token": {
+      "token_id": "OMG:a9ef7096-4060-4155-b79d-b36c42d5d095",
+      "token": {
         "updated_at": "2018-04-23T04:32:09.307511Z",
         "symbol": "OMG",
         "subunit_to_unit": 10000,
-        "object": "minted_token",
+        "object": "token",
         "name": "OmiseGO",
         "metadata": {},
         "id": "OMG:a9ef7096-4060-4155-b79d-b36c42d5d095",
@@ -64,12 +64,12 @@
     "status": "confirmed",
     "socket_topic": "transaction_consumption:e932fb80-f34c-4f7e-aab4-38b5135fe0eb",
     "object": "transaction_consumption",
-    "minted_token_id": "OMG:a9ef7096-4060-4155-b79d-b36c42d5d095",
-    "minted_token": {
+    "token_id": "OMG:a9ef7096-4060-4155-b79d-b36c42d5d095",
+    "token": {
       "updated_at": "2018-04-23T04:32:09.307511Z",
       "symbol": "OMG",
       "subunit_to_unit": 10000,
-      "object": "minted_token",
+      "object": "token",
       "name": "OmiseGO",
       "metadata": {},
       "id": "OMG:a9ef7096-4060-4155-b79d-b36c42d5d095",

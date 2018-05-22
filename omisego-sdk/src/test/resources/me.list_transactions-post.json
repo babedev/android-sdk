@@ -14,11 +14,11 @@
         "updated_at": "2018-03-14T10:07:57.580212Z",
         "to": {
           "object": "transaction_source",
-          "minted_token": {
+          "token": {
             "updated_at": "2018-03-14T09:42:17.267266Z",
             "symbol": "OMG",
             "subunit_to_unit": 10000,
-            "object": "minted_token",
+            "object": "token",
             "name": "OmiseGO",
             "metadata": {},
             "id": "OMG:20f18fe9-3354-4ef8-9853-226f633a4ef2",
@@ -35,11 +35,11 @@
         "id": "a9254528-f1b2-4283-9e22-f6c85dd3ea41",
         "from": {
           "object": "transaction_source",
-          "minted_token": {
+          "token": {
             "updated_at": "2018-03-14T09:42:17.267266Z",
             "symbol": "OMG",
             "subunit_to_unit": 10000,
-            "object": "minted_token",
+            "object": "token",
             "name": "OmiseGO",
             "metadata": {},
             "id": "OMG:20f18fe9-3354-4ef8-9853-226f633a4ef2",
@@ -60,11 +60,11 @@
         "updated_at": "2018-03-14T10:16:11.491819Z",
         "to": {
           "object": "transaction_source",
-          "minted_token": {
+          "token": {
             "updated_at": "2018-03-14T09:42:17.267266Z",
             "symbol": "OMG",
             "subunit_to_unit": 10000,
-            "object": "minted_token",
+            "object": "token",
             "name": "OmiseGO",
             "metadata": {},
             "id": "OMG:20f18fe9-3354-4ef8-9853-226f633a4ef2",
@@ -81,11 +81,11 @@
         "id": "220e148d-4474-4e89-a0b4-7eadc88eb3e0",
         "from": {
           "object": "transaction_source",
-          "minted_token": {
+          "token": {
             "updated_at": "2018-03-14T09:42:17.267266Z",
             "symbol": "OMG",
             "subunit_to_unit": 10000,
-            "object": "minted_token",
+            "object": "token",
             "name": "OmiseGO",
             "metadata": {},
             "id": "OMG:20f18fe9-3354-4ef8-9853-226f633a4ef2",
@@ -106,11 +106,11 @@
         "updated_at": "2018-03-14T10:19:22.560746Z",
         "to": {
           "object": "transaction_source",
-          "minted_token": {
+          "token": {
             "updated_at": "2018-03-14T09:42:17.267266Z",
             "symbol": "OMG",
             "subunit_to_unit": 10000,
-            "object": "minted_token",
+            "object": "token",
             "name": "OmiseGO",
             "metadata": {},
             "id": "OMG:20f18fe9-3354-4ef8-9853-226f633a4ef2",
@@ -127,11 +127,11 @@
         "id": "62d82363-5d94-406b-b120-3ef746452e93",
         "from": {
           "object": "transaction_source",
-          "minted_token": {
+          "token": {
             "updated_at": "2018-03-14T09:42:17.267266Z",
             "symbol": "OMG",
             "subunit_to_unit": 10000,
-            "object": "minted_token",
+            "object": "token",
             "name": "OmiseGO",
             "metadata": {},
             "id": "OMG:20f18fe9-3354-4ef8-9853-226f633a4ef2",
@@ -152,11 +152,11 @@
         "updated_at": "2018-03-14T10:19:36.469182Z",
         "to": {
           "object": "transaction_source",
-          "minted_token": {
+          "token": {
             "updated_at": "2018-03-14T09:42:17.267266Z",
             "symbol": "OMG",
             "subunit_to_unit": 10000,
-            "object": "minted_token",
+            "object": "token",
             "name": "OmiseGO",
             "metadata": {},
             "id": "OMG:20f18fe9-3354-4ef8-9853-226f633a4ef2",
@@ -173,11 +173,11 @@
         "id": "25d984e7-dd9a-4483-964f-34b21d1b10bd",
         "from": {
           "object": "transaction_source",
-          "minted_token": {
+          "token": {
             "updated_at": "2018-03-14T09:42:17.267266Z",
             "symbol": "OMG",
             "subunit_to_unit": 10000,
-            "object": "minted_token",
+            "object": "token",
             "name": "OmiseGO",
             "metadata": {},
             "id": "OMG:20f18fe9-3354-4ef8-9853-226f633a4ef2",
@@ -198,11 +198,11 @@
         "updated_at": "2018-03-14T10:21:30.087141Z",
         "to": {
           "object": "transaction_source",
-          "minted_token": {
+          "token": {
             "updated_at": "2018-03-14T09:42:17.267266Z",
             "symbol": "OMG",
             "subunit_to_unit": 10000,
-            "object": "minted_token",
+            "object": "token",
             "name": "OmiseGO",
             "metadata": {},
             "id": "OMG:20f18fe9-3354-4ef8-9853-226f633a4ef2",
@@ -219,11 +219,11 @@
         "id": "25cde248-4a11-4066-ae86-52b0792de9ec",
         "from": {
           "object": "transaction_source",
-          "minted_token": {
+          "token": {
             "updated_at": "2018-03-14T09:42:17.267266Z",
             "symbol": "OMG",
             "subunit_to_unit": 10000,
-            "object": "minted_token",
+            "object": "token",
             "name": "OmiseGO",
             "metadata": {},
             "id": "OMG:20f18fe9-3354-4ef8-9853-226f633a4ef2",
@@ -244,11 +244,11 @@
         "updated_at": "2018-03-14T10:40:59.359332Z",
         "to": {
           "object": "transaction_source",
-          "minted_token": {
+          "token": {
             "updated_at": "2018-03-14T09:42:17.267266Z",
             "symbol": "OMG",
             "subunit_to_unit": 10000,
-            "object": "minted_token",
+            "object": "token",
             "name": "OmiseGO",
             "metadata": {},
             "id": "OMG:20f18fe9-3354-4ef8-9853-226f633a4ef2",
@@ -265,11 +265,11 @@
         "id": "168b920d-1feb-4609-a0bc-632e8ca860c3",
         "from": {
           "object": "transaction_source",
-          "minted_token": {
+          "token": {
             "updated_at": "2018-03-14T09:42:17.267266Z",
             "symbol": "OMG",
             "subunit_to_unit": 10000,
-            "object": "minted_token",
+            "object": "token",
             "name": "OmiseGO",
             "metadata": {},
             "id": "OMG:20f18fe9-3354-4ef8-9853-226f633a4ef2",
@@ -290,11 +290,11 @@
         "updated_at": "2018-03-14T10:41:16.205825Z",
         "to": {
           "object": "transaction_source",
-          "minted_token": {
+          "token": {
             "updated_at": "2018-03-14T09:42:17.267266Z",
             "symbol": "OMG",
             "subunit_to_unit": 10000,
-            "object": "minted_token",
+            "object": "token",
             "name": "OmiseGO",
             "metadata": {},
             "id": "OMG:20f18fe9-3354-4ef8-9853-226f633a4ef2",
@@ -311,11 +311,11 @@
         "id": "55d227e4-02c5-4830-8e05-dda798c91b39",
         "from": {
           "object": "transaction_source",
-          "minted_token": {
+          "token": {
             "updated_at": "2018-03-14T09:42:17.267266Z",
             "symbol": "OMG",
             "subunit_to_unit": 10000,
-            "object": "minted_token",
+            "object": "token",
             "name": "OmiseGO",
             "metadata": {},
             "id": "OMG:20f18fe9-3354-4ef8-9853-226f633a4ef2",
@@ -336,11 +336,11 @@
         "updated_at": "2018-03-14T10:42:03.066812Z",
         "to": {
           "object": "transaction_source",
-          "minted_token": {
+          "token": {
             "updated_at": "2018-03-14T09:42:17.267266Z",
             "symbol": "OMG",
             "subunit_to_unit": 10000,
-            "object": "minted_token",
+            "object": "token",
             "name": "OmiseGO",
             "metadata": {},
             "id": "OMG:20f18fe9-3354-4ef8-9853-226f633a4ef2",
@@ -357,11 +357,11 @@
         "id": "3ec42393-e842-4416-b67d-3f766e7ae211",
         "from": {
           "object": "transaction_source",
-          "minted_token": {
+          "token": {
             "updated_at": "2018-03-14T09:42:17.267266Z",
             "symbol": "OMG",
             "subunit_to_unit": 10000,
-            "object": "minted_token",
+            "object": "token",
             "name": "OmiseGO",
             "metadata": {},
             "id": "OMG:20f18fe9-3354-4ef8-9853-226f633a4ef2",
@@ -382,11 +382,11 @@
         "updated_at": "2018-03-14T10:42:21.982037Z",
         "to": {
           "object": "transaction_source",
-          "minted_token": {
+          "token": {
             "updated_at": "2018-03-14T09:42:17.267266Z",
             "symbol": "OMG",
             "subunit_to_unit": 10000,
-            "object": "minted_token",
+            "object": "token",
             "name": "OmiseGO",
             "metadata": {},
             "id": "OMG:20f18fe9-3354-4ef8-9853-226f633a4ef2",
@@ -403,11 +403,11 @@
         "id": "6f17ee9f-54b5-4122-8f94-5da27aa79305",
         "from": {
           "object": "transaction_source",
-          "minted_token": {
+          "token": {
             "updated_at": "2018-03-14T09:42:17.267266Z",
             "symbol": "OMG",
             "subunit_to_unit": 10000,
-            "object": "minted_token",
+            "object": "token",
             "name": "OmiseGO",
             "metadata": {},
             "id": "OMG:20f18fe9-3354-4ef8-9853-226f633a4ef2",
