@@ -21,6 +21,7 @@ enum class ErrorCode constructor(private val code: String) {
     // Error code from OmiseGO server API
     SERVER_INTERNAL_SERVER_ERROR("server:internal_server_error"),
     SERVER_UNKNOWN_ERROR("server:unknown_error"),
+    MINTED_TOKEN_NOT_FOUND("minted_token:minted_token_not_found"),
     TRANSACTION_REQUEST_NOT_FOUND("transaction_request:transaction_request_not_found"),
     TRANSACTION_CONSUMPTION_NOT_OWNER("transaction_consumption:not_owner"),
     TRANSACTION_CONSUMPTION_INVALID_MINTED_TOKEN("transaction_consumption:invalid_minted_token"),
