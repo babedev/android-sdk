@@ -1,5 +1,8 @@
 package co.omisego.omisego.model
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
 /*
  * OmiseGO
  *
@@ -12,4 +15,5 @@ package co.omisego.omisego.model
  *
  * @param mintedTokens A list of minted tokens available for the provider
  */
-data class Setting(val mintedTokens: List<MintedToken>)
+@Parcelize
+data class Setting(val mintedTokens: List<MintedToken>) : Parcelable

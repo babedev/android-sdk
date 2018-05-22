@@ -7,6 +7,8 @@ package co.omisego.omisego.model
  * Copyright © 2017-2018 OmiseGO. All rights reserved.
  */
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
 import java.math.BigDecimal
 
 /**
@@ -19,7 +21,9 @@ import java.math.BigDecimal
  *  i.e: If I want to give or receive 13 minted tokens and the [subunitToUnit] is 1000,
  *  then the amount will be 13*1000 = 13000
  */
-data class MintedToken(val id: String, val symbol: String, val name: String, val subunitToUnit: BigDecimal) {
+
+@Parcelize
+data class MintedToken(val id: String, val symbol: String, val name: String, val subunitToUnit: BigDecimal) : Parcelable {
 
     /**
      * Compares the current [MintedToken] with the specified [MintedToken] for verifying both [MintedToken] are compatible.

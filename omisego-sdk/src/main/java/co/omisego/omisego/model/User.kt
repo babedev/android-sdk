@@ -1,6 +1,9 @@
 package co.omisego.omisego.model
 
+import android.os.Parcelable
 import co.omisego.omisego.operation.Listenable
+import kotlinx.android.parcel.Parcelize
+import kotlinx.android.parcel.RawValue
 import java.util.Date
 
 /*
@@ -22,13 +25,14 @@ import java.util.Date
  * @param createdAt The creation date of the user.
  * @param updatedAt The last update date of the user.
  */
+@Parcelize
 data class User(
     val id: String,
     val providerUserId: String,
     val username: String,
-    val metaData: Map<String, Any>,
-    val encryptedMetadata: Map<String, Any>,
+    val metaData: @RawValue Map<String, Any>,
+    val encryptedMetadata: @RawValue Map<String, Any>,
     override val socketTopic: String,
     val createdAt: Date,
     val updatedAt: Date
-) : Listenable
+) : Listenable, Parcelable

@@ -1,5 +1,8 @@
 package co.omisego.omisego.model
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
 /*
  * OmiseGO
  *
@@ -13,4 +16,5 @@ package co.omisego.omisego.model
  * @param address The address of the balances
  * @param balances The list of balances associated with that address
  */
-data class Address(val address: String, val balances: List<Balance>)
+@Parcelize
+data class Address(val address: String, val balances: List<Balance>): Parcelable
