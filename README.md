@@ -168,7 +168,7 @@ Where
 * `perPage` is the number of results per page
 * `sortBy` is the sorting field. The available values are:
 
-    `ID`, `STATUS`, `FROM`, `TO`, `CREATED_AT`, `UPDATED_AT`
+    `ID`, `STATUS`, `FROM`, `TO`, `CREATED_AT`
     
     > `import co.omisego.omisego.model.pagination.Paginable.Transaction.SortableFields.*`
     
@@ -181,7 +181,7 @@ Where
 * `searchTerm` *(optional)* is a term to search for all of the searchable fields. 
       Conflict with `searchTerms`, only use one of them. The available values are:
     
-    `ID`, `STATUS`, `FROM`, `TO`, `CREATED_AT`, `UPDATED_AT`
+    `ID`, `STATUS`, `FROM`, `TO`,
       
     > `import co.omisego.omisego.model.pagination.Paginable.Transaction.SearchableFields.*`
     
