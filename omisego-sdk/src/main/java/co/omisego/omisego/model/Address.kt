@@ -17,4 +17,4 @@ import kotlinx.android.parcel.Parcelize
  * @param balances The list of balances associated with that address
  */
 @Parcelize
-data class Address(val address: String, val balances: List<Balance>): Parcelable
+data class Address(val address: String, val balances: List<Balance>) : Parcelable
