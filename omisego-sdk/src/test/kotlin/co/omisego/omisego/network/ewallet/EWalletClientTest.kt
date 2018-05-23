@@ -42,10 +42,10 @@ import kotlin.test.Test
 class EWalletClientTest {
     private val secretFileName: String = "secret.json" // Replace your secret file here
     private val secret: JSONObject by lazy { loadSecretFile(secretFileName) }
-    private val userFile: File by ResourceFile("user.me-post.json")
-    private val listTransactionsFile: File by ResourceFile("me.list_transactions-post.json")
-    private val listBalanceFile: File by ResourceFile("me.list_balances-post.json")
-    private val getSettingFile: File by ResourceFile("me.get_settings-post.json")
+    private val userFile: File by ResourceFile("user.json")
+    private val listTransactionsFile: File by ResourceFile("list_transactions.json")
+    private val listBalanceFile: File by ResourceFile("list_balances.json")
+    private val getSettingFile: File by ResourceFile("setting.json")
     private var mockWebServer: MockWebServer = MockWebServer()
     private var mockUrl: HttpUrl = mockWebServer.url("/api/")
     private lateinit var eWalletClient: EWalletClient
