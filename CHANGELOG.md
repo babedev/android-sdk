@@ -11,7 +11,7 @@ and `OmiseGO` adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 - [Websocket](https://github.com/omisego/android-sdk#websocket)
 
 ### Changed
-- Renamed `EncryptionHelper` to `OMGEncryption`. Now, it can be only used for create an authorization header for connecting to the eWallet API.
+- Renamed `EncryptionHelper` to `OMGEncryption`. Now, it can be only used to create an authorization header for connecting to the eWallet API.
 - Changed the initialization steps of the `EWalletClient` from passing the base64 encrypted of "apiKey:authorizationToken" to pass both `apiKey` and `authenticationToken` to prevent misconfiguration.
 
 ## [0.9.3] - 2018-05-11
