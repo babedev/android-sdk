@@ -15,6 +15,7 @@ import co.omisego.omisego.constant.Versions
 import co.omisego.omisego.extension.mockEnqueueWithHttpCode
 import co.omisego.omisego.helpers.delegation.ResourceFile
 import co.omisego.omisego.model.BalanceList
+import co.omisego.omisego.model.ClientConfiguration
 import co.omisego.omisego.model.OMGResponse
 import co.omisego.omisego.model.Setting
 import co.omisego.omisego.model.User
@@ -49,15 +50,20 @@ class EWalletClientTest {
     private var mockWebServer: MockWebServer = MockWebServer()
     private var mockUrl: HttpUrl = mockWebServer.url("/api/")
     private lateinit var eWalletClient: EWalletClient
+    private lateinit var config: ClientConfiguration
 
     @Before
     fun setUp() {
+        config = ClientConfiguration(
+            "base_url",
+            secret.getString("api_key"),
+            secret.getString("auth_token")
+        )
+
         eWalletClient = EWalletClient.Builder {
             debugUrl = mockUrl
-            apiKey = secret.getString("api_key")
-            authenticationToken = secret.getString("auth_token")
+            clientConfiguration = config
             callbackExecutor = Executor { it.run() }
-            debug = false
         }.build()
     }
 
@@ -91,35 +97,6 @@ class EWalletClientTest {
         val actualResponse = eWalletClient.eWalletAPI.listBalances().execute().body()!!
         val expectedResponse = buildResponse<BalanceList>(listBalanceFile.readText())
         actualResponse shouldEqual expectedResponse
-    }
-
-    @Test
-    fun `Empty base_url should throw IllegalStateException`() {
-        val errorFun = {
-            EWalletClient.Builder {
-                authenticationToken = secret.getString("auth_token")
-                apiKey = secret.getString("api_key")
-                callbackExecutor = Executor { it.run() }
-                debug = false
-            }.build()
-        }
-
-        errorFun shouldThrow IllegalStateException::class withMessage
-                Exceptions.MSG_EMPTY_BASE_URL
-    }
-
-    @Test
-    fun `Empty auth_token should throw IllegalStateException`() {
-        val errorFun = {
-            EWalletClient.Builder {
-                debugUrl = mockUrl
-                apiKey = secret.getString("api_key")
-                callbackExecutor = Executor { it.run() }
-                debug = false
-            }.build()
-        }
-        errorFun shouldThrow IllegalStateException::class withMessage
-                Exceptions.MSG_EMPTY_AUTH_TOKEN
     }
 
     @Test
@@ -183,6 +160,12 @@ class EWalletClientTest {
         val request = mockWebServer.takeRequest()
 
         request.path shouldEqual "/api/${Endpoints.LOGOUT}"
+    }
+
+    @Test
+    fun `EWalletClient should throws an IllegalStateException if the clientConfiguration is not set`(){
+        val error = { EWalletClient.Builder { }.build() }
+        error shouldThrow IllegalStateException::class withMessage Exceptions.MSG_NULL_CLIENT_CONFIGURATION
     }
 
     private fun loadSecretFile(filename: String): JSONObject {

@@ -15,6 +15,7 @@ import co.omisego.omisego.extension.mockEnqueueWithHttpCode
 import co.omisego.omisego.helpers.delegation.ResourceFile
 import co.omisego.omisego.model.APIError
 import co.omisego.omisego.model.BalanceList
+import co.omisego.omisego.model.ClientConfiguration
 import co.omisego.omisego.model.OMGResponse
 import co.omisego.omisego.model.Setting
 import co.omisego.omisego.model.User
@@ -66,12 +67,16 @@ class OMGAPIClientTest {
     @Before
     fun setup() {
         initMockWebServer()
+        val config = ClientConfiguration(
+            "base_url",
+            secret.getString("api_key"),
+            secret.getString("auth_token")
+        )
+
         eWalletClient = EWalletClient.Builder {
             debugUrl = mockUrl
-            apiKey = secret.getString("api_key")
-            authenticationToken = secret.getString("auth_token")
             callbackExecutor = Executor { it.run() }
-            debug = false
+            clientConfiguration = config
         }.build()
 
         omgAPIClient = OMGAPIClient(eWalletClient)
