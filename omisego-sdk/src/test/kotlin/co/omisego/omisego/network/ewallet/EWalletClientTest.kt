@@ -14,11 +14,11 @@ import co.omisego.omisego.constant.HTTPHeaders
 import co.omisego.omisego.constant.Versions
 import co.omisego.omisego.extension.mockEnqueueWithHttpCode
 import co.omisego.omisego.helpers.delegation.ResourceFile
-import co.omisego.omisego.model.BalanceList
 import co.omisego.omisego.model.ClientConfiguration
 import co.omisego.omisego.model.OMGResponse
 import co.omisego.omisego.model.Setting
 import co.omisego.omisego.model.User
+import co.omisego.omisego.model.WalletList
 import co.omisego.omisego.model.transaction.list.TransactionListParams
 import co.omisego.omisego.utils.GsonProvider
 import co.omisego.omisego.utils.OMGEncryptionHelper
@@ -45,7 +45,7 @@ class EWalletClientTest {
     private val secret: JSONObject by lazy { loadSecretFile(secretFileName) }
     private val userFile: File by ResourceFile("user.json")
     private val listTransactionsFile: File by ResourceFile("list_transactions.json")
-    private val listBalanceFile: File by ResourceFile("list_balances.json")
+    private val listWalletsFile: File by ResourceFile("list_wallets.json")
     private val getSettingFile: File by ResourceFile("setting.json")
     private var mockWebServer: MockWebServer = MockWebServer()
     private var mockUrl: HttpUrl = mockWebServer.url("/api/")
@@ -91,11 +91,11 @@ class EWalletClientTest {
     }
 
     @Test
-    fun `Calls list_balances should be match with the expected response`() {
-        listBalanceFile.mockEnqueueWithHttpCode(mockWebServer)
+    fun `Calls list_wallets should be match with the expected response`() {
+        listWalletsFile.mockEnqueueWithHttpCode(mockWebServer)
 
-        val actualResponse = eWalletClient.eWalletAPI.listBalances().execute().body()!!
-        val expectedResponse = buildResponse<BalanceList>(listBalanceFile.readText())
+        val actualResponse = eWalletClient.eWalletAPI.listWallets().execute().body()!!
+        val expectedResponse = buildResponse<WalletList>(listWalletsFile.readText())
         actualResponse shouldEqual expectedResponse
     }
 
@@ -133,12 +133,12 @@ class EWalletClientTest {
     }
 
     @Test
-    fun `EWalletClient request to list_balance with the correct path`() {
-        listBalanceFile.mockEnqueueWithHttpCode(mockWebServer)
+    fun `EWalletClient request to list_wallets with the correct path`() {
+        listWalletsFile.mockEnqueueWithHttpCode(mockWebServer)
 
-        eWalletClient.eWalletAPI.listBalances().execute()
+        eWalletClient.eWalletAPI.listWallets().execute()
         val request = mockWebServer.takeRequest()
-        request.path shouldEqual "/api/${Endpoints.LIST_BALANCE}"
+        request.path shouldEqual "/api/${Endpoints.LIST_WALLETS}"
     }
 
     @Test
